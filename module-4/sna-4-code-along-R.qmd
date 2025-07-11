@@ -1,0 +1,401 @@
+---
+title: "Intro to ERGMs"
+subtitle: "SNA Module 4: Code-Along"
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERLogoB.png
+    #theme: Cosmo
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.go.ncsu.edu/laser-institute>go.ncsu.edu/laser-institute
+highlight-style: a11y
+knitr:
+  opts_chunk:
+    out.width: "90%"
+    fig-align: center
+resources:
+  - demo.pdf
+bibliography: lit/references.bib
+editor: visual
+---
+
+## Overview
+
+1.  **Prepare**: A quick look at the study by Daly and Finnigan from whence our data was derived.
+
+2.  **Wrangle**: Learn how to convert matrices into more workable formats like a familiar edge-list.
+
+3.  **Explore**: View some basic network stats and make a quick sociogram.
+
+4.  **Model**: Learn to fit and interpret a very basic ERGM.
+
+5.  **Communicate**: Reflect on what we learned.
+
+::: notes
+**Speaker Notes:**
+:::
+
+# Prepare
+
+Guiding Research & the ERGM Package
+
+## Guiding Study
+
+::: panel-tabset
+### Context
+
+::: columns
+::: {.column width="70%"}
+This longitudinal case study **examines reform-related knowledge, advice, and innovation network structures** among administrators in a district under sanction for under-performance and engaging in district-wide reform efforts.
+:::
+
+::: {.column width="30%"}
+![Ebb and Flow of Social Network Ties [@daly2011ebb]](img/daly-net.jpeg)
+:::
+:::
+
+### Questions
+
+This study involves quantifying and visualizing the ties and overall structure of informal networks to answer the following research questions:
+
+1.  In what ways have reform-related social networks between district and site leaders evolved over a 2-year period?
+
+2.  How do district and school leaders perceive the evolution of the social networks and its effect on the exchange of reform-related resources within the district?
+
+### Data
+
+To answer RQ1, Daly and Finnigan administered **online survey consisting of network relations and demographic questions** asking participants to:
+
+-   select the administrators in the La Estasis network that they interact with for the purpose of **advice seeking, collaboration, knowledge exchanges**,
+
+-   assess their relationships on a **5-point interaction scale** ranging from 1 (no interaction) to 5 (1 to 2 times a week).
+
+### Findings
+
+::: columns
+::: {.column width="50%"}
+### QAP
+
+-   weak correlation between knowledge and innovation and advice and innovation
+
+-   leaders with knowledge ties also likely to have advice relations
+:::
+
+::: {.column width="50%"}
+### P-Star (SIENA)
+
+-   Leaders with more experience more likely to be selected for reform-related advice
+
+-   over time, leaders tended to create ties with those frequently identified as resources for innovative practices
+:::
+:::
+
+### Takeaways
+
+Overall, the findings from SNA and qualitative interviews indicate that over time:
+
+1.  Networks increased the number of superficial interactions.
+
+2.  More frequent exchanges, however, remained unchanged.
+
+3.  The result was a centralized network structure.
+:::
+
+::: notes
+**Speaker Notes:**
+:::
+
+## Guiding Question
+
+::: panel-tabset
+### Research Question
+
+<br>
+
+*Does gender or some other individual attribute predict confidential exchanges between school leaders?*
+
+### ergm 📦
+
+-   ERGMs are the primary building blocks of statistically testing network structural effects.
+
+-   Uses simulation to determine the probability of network feature (e.g., reciprocity, clique, homophily)
+
+-   Evolved to allow actor attributes for covariates
+
+-   The {ergm} package is used to fit exponential-family random graph models (ERGMs) in R
+
+### Your Turn
+
+Let's start by creating a new R script and loading the following packages:
+
+-   tidyverse
+
+-   ergm
+
+-   statnet
+
+-   tidygraph
+
+-   ggraph
+
+``` r
+# YOUR CODE HERE
+#
+#
+```
+
+```{r}
+library(tidyverse)
+library(ergm)
+library(statnet)
+library(tidygraph)
+library(ggraph)
+```
+:::
+
+# Wrangle
+
+Import Data & Tidy Graph
+
+## Import Data
+
+::: panel-tabset
+### Import Data
+
+Let's import two Excel files from the Social Network Analysis and Education companion site. year_1_collaboration.xlsx
+
+```{r}
+#| echo: true
+leader_nodes <- read_csv("data/school-leader-nodes.csv")
+leader_edges <- read_csv("data/school-leader-edges.csv")
+```
+
+### Inspect Data
+
+Using your R script, take a look at the node and edge lists we just imported:
+
+``` r
+# ADD CODE BELOW
+#
+#
+```
+
+### Discuss
+
+Think about the questions below and be prepared to share your response:
+
+1.  What do you think the values for each tie represent?
+
+2.  What do you think the "trust" and "efficacy" variables represent?
+
+3.  What else do you notice about this data?
+
+4.  What else do you wonder about this data?
+
+**Hint**: Take a look at the SNA in Ed [companion site](https://studysites-sagepub-com.prox.lib.ncsu.edu/carolan/study/resources.htm)
+
+### Answer
+
+-   Edge values indicate the frequency of interactions leaders have with nominated individuals on a four-point frequency scale ranging from 1 (the least frequent) to 4 (1–2 times a week).
+
+-   `efficacy` measures a belief in their ability to have an effect derived from a scale that includes 18 items rated on a 9-point Likert scale ranging from 1 (None at all) to 9 (A great deal).
+
+-   `trust` measures perceptions of the level of trust their school and district is a composite score based on scale contains eight items rated on a 7-point Likert scale ranging from 1 (Strongly disagree) to 7 (Strongly agree).
+:::
+
+## Convert to "Network"
+
+::: panel-tabset
+### as.network() function
+
+The {ergm} package requires an object of the class "network" — the format that {statnet} uses to store and work with network data.
+
+The `as.network()` function does just that. Run the following code in your console to pull up the help page for the `as.network()` function and let's take a look:
+
+``` r
+?as.network
+```
+
+### Convert to Network
+
+Run the following code in your R script to combine our edge and node lists into a single "network" object:
+
+```{r}
+#| echo: true
+
+leader_network <- as.network(leader_edges,
+                             vertices = leader_nodes)
+
+```
+
+### Check Class
+
+Now let's use the `class()` function to verify that it is indeed a network object/data structure:
+
+```{r}
+#| echo: true
+class(leader_network)
+
+
+```
+:::
+
+# Explore
+
+Network Stats & A Quick Sociogram
+
+## View Network
+
+::: panel-tabset
+### Inspect Network
+
+First, let's take a quick look at our network by printing
+
+```{r}
+#| echo: True
+
+leader_network
+```
+
+### Visualize Network
+
+Now use the `plot()` or `autograph()` function to create a quick sociogram
+
+``` r
+# YOUR CODE HERE
+#
+#
+```
+
+### Output
+
+```{r}
+autograph(leader_network)
+```
+:::
+
+# Model
+
+Model Specification & ERGM Parameters
+
+## Base ERGM
+
+::: panel-tabset
+### Model Specification
+
+The syntax for specifying a model in the `ergm` package follows **R**'s formula convention: `my_network ~ ergm_term_1 + ergm_term_2 + ergm_term_3` and so forth.
+
+In the Help tab, search for "ergm-terms" and select the `ergm::ergm-terms` help page to take a quick peek at the plethora of parameters you can include in your model.
+
+### ERGM 1
+
+Let's start with with a simple model that contains the following ergm-terms
+
+-   **`edges`** a required term that represents the total number of edges in the network
+
+-   **`mutual`** examines the tendency for ties to be reciprocated, i.e. "mutuality".
+
+``` r
+# ensure reproducibility of our model
+set.seed(589) 
+
+# fit our ergm model 
+ergm_mod_1 <-ergm(leader_network ~ edges + mutual) 
+
+# get summary statistics for our model
+summary(ergm_mod_1)
+```
+
+### Interpret
+
+```{r}
+# ensure reproducibility of our model
+set.seed(589) 
+
+# fit our ergm model 
+ergm_mod_1 <-ergm(leader_network ~ edges + mutual) 
+
+# get summary statistics for our model
+summary(ergm_mod_1)
+```
+:::
+
+## ERGM 2
+
+::: panel-tabset
+### Confidential Ties
+
+Let's now test for homophily -- or the "birds of a feather" phenomenon -- in our network. The `ergm()` function now includes a `nodematch()` term to answer the following question:
+
+*Are school leaders more likely to confide in colleagues of their own gender or who work at the same site level (e.g., school vs. central office)?*
+
+``` r
+# fit our ergm model 
+ergm_mod_2 <-ergm(leader_network ~ edges + mutual + nodematch('male') + nodematch('district_site')) 
+
+# get summary statistics for our model
+summary(ergm_mod_2)
+```
+
+### Interpret
+
+```{r}
+# fit our ergm model 
+ergm_mod_2 <-ergm(leader_network ~ edges + mutual + nodematch('male') + nodematch('district_site')) 
+# get summary statistics for our model
+summary(ergm_mod_2)
+```
+:::
+
+## ERGM 3
+
+::: panel-tabset
+### Trust Ties
+
+*Are school leaders with higher levels of trust more likely to have confidential exchanges?*
+
+``` r
+# fit our ergm model 
+ergm_mod_3 <-ergm(leader_network ~ edges + mutual + nodematch('male') + nodematch('district_site') + nodecov('trust')) 
+
+# get summary statistics for our model
+summary(ergm_mod_3)
+```
+
+### Interpret
+
+```{r}
+# fit our ergm model 
+ergm_mod_3 <-ergm(leader_network ~ edges + mutual + nodematch('male') + nodematch('district_site') + nodecov('trust')) 
+
+# get summary statistics for our model
+summary(ergm_mod_3)
+```
+:::
+
+## What's Next?
+
+-   **SNA Case Study**: Birds of Feather Lead Together
+
+-   **Guiding Study**: Ebb and Flow of Social Network Ties Between District Leaders [@daly2011ebb]
+
+## Acknowledgements
+
+::: columns
+::: {.column width="20%"}
+![](img/nsf.jpg){fig-align="center" width="80%"}
+:::
+
+::: {.column width="80%"}
+This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+:::
+:::
+
+## References

@@ -1,0 +1,302 @@
+---
+title: "Data Collection & Quality"
+subtitle: "SNA Module 2: A Conceptual Overview"
+format:
+  revealjs: 
+    slide-number: c/t
+    progress: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
+    logo: img/LASERLogoB.png
+    theme: [default, css/laser.scss]
+    width: 1920
+    height: 1080
+    margin: 0.05
+    footer: <a href=https://www.go.ncsu.edu/laser-institute>go.ncsu.edu/laser-institute
+resources:
+  - demo.pdf
+bibliography: lit/references.bib
+editor: visual
+---
+
+## A Quick Refresher
+
+::: columns
+::: {.column width="50%"}
+### Network Theory
+
+1.  Social relations are often more important than individual attributes.
+
+2.  Social networks affect individual beliefs, perceptions, and behaviors.
+
+3.  Relations are not static but rather occur as part of a dynamic process.
+:::
+
+::: {.column width="50%"}
+### Network Terms
+
+![](img/nodes-edges.jpeg){width="100%"}
+:::
+:::
+
+::: notes
+**Speaker Notes:**
+
+Recall that Social Network Theory rests on a few key assumptions that are fairly intuitive but also supported by ample research in education:
+
+1.  Social relations are often more important for understanding behaviors and attitudes than are such attributes related to one's background (e.g., age, gender, etc.). The complex patterns of relations among individuals, unlike their attributes, change from context to context, condition educators and students apart from their attributes, therefore offers a deeper and broader explanation for a wide range of educational opportunities and outcomes.
+
+2.  The second assumption is what motivates a wide array of network studies in education and encourages researchers to uncover the mechanisms through which relations affect actors and to identify the conditions under which these mechanisms operate in specific contexts.
+
+3.  The last assumption is that relations are not static but rather occur as part of a dynamic process. For example, a study by Atteberry & Bryk (2010) demonstrated how the communication patterns between teachers and the their school's literacy coach affected the successful implementation of a school-level reform initiative. These relations, in turn, altered the flow of information among teachers and created further opportunities or constraints on future interactions and whether the intervention was ultimately a success.
+
+### Network Terms
+
+Networks are often depicted as a **sociogram**, or network graph, that consists of nodes and edges representing indiviudals, their relations, and structural properting of the entire network.
+
+-   **Node.** Nodes are frequently referred to as actors or vertices and typically illustrated by circles, but the shape, color and size can vary depening on what the researcher wants to illustrate abotu the data.
+
+-   **Edges.** are frequently referred to as relations or ties. The are usually depicted by lines that represent some kind of relationship between individuals and that often have arrows indicating directionality. For example, in a communication network, arrows may illustrate a reply to a discussion thread or an email sent.
+:::
+
+# Data Collection Considerations
+
+Boundaries, Ties & Data Sources
+
+::: notes
+**Speaker Notes**:
+
+A key difference between data used in typical STEM Ed Research and data used for social network analysis is the focus on relationships between individual rather than the individual themselves. As a result, this presents some unique issues inherent in how we manage of social network data, as well as the measurements derived from this data.
+
+In this conceptual overview we focus on data management, including how to collect and store network data, as well as approaches to help ensure the quality of the data we collect.
+:::
+
+## Boundary Specification
+
+How do you determine **who's in the network** that you will collect data about?
+
+-   no individual is an island, independence is NOT assumed
+-   who we know, are friends with, or talk with matters
+-   the influence of these relations is shaped by the larger network
+-   location in a social structure shapes one's opportunities and outcomes
+
+::: notes
+**Speaker Notes:**
+
+Social network analysis is also predicated on a few key assumptions:
+
+-   social relations are often more important for understanding behaviors and attitudes than are such attributes related to one's background (e.g., age, gender, etc.).
+-   social networks affect beliefs, perceptions, and behaviors through a variety of structural mechanisms
+-   social relations are not static but rather occur as part of a dynamic process that is not adequately explained by conventional social theory; relations are continually changing as actors interact with others in shifting contexts.
+
+Here's a concrete example of the distinction between SNA and traditional research. Imagine studying a topic such as teacher effectiveness as measured by student test scores. In trying to understand why some teachers are more "effective" than others, researchers tend to focus on the attributes of the teacher, for example their highest degree, use of technology, years of experience, or pathways toward licensure and certification. However, they typically neglect the relations among teachers and between teachers and students and how these relations shape their effectiveness as a teacher. SNA attempts to account for the web of relations in which actors are embedded, this **social structure**, that simultaneously may constrain or provide opportunities for their effectiveness.
+:::
+
+## Defining Ties
+
+::: columns
+::: {.column width="60%"}
+### Relationship & Strength
+
+-   Friendships (friend, best friend)
+
+-   Co-Author/Presenter (# of pubs)
+
+-   Assignment Partner
+
+-   Committee Members
+:::
+
+::: {.column width="40%"}
+### Interaction & Frequency
+
+-   Online Discussion (# of replies/DMs)
+
+-   Support Seeking (how often)
+
+-   Confidential Exchanges
+
+-   Communications
+:::
+:::
+
+::: notes
+**Speaker Notes:**
+
+The image on the right is from a publication by LASER Institute PI Dr. Shaun Kellogg and details the processes of constructing an online communication network dataset from discussion forums in a Massively Online Open Course for Educators (MOOC-Ed) called *The* *Digital* *Learning* *Transition in* *K-12* *Schools*.
+
+Access to social relations through online learning tools and social media platforms has helped to spark a renewed interest in SNA over the past two decades and has resulted in the exponential growth of publications featuring SNA.
+:::
+
+## Data Sources
+
+::: columns
+::: {.column width="60%"}
+### Archival Records
+
+-   Email Accounts
+
+-   Discussion Forums
+
+-   Social Network Platforms
+
+-   School Records
+:::
+
+::: {.column width="40%"}
+### Sociometric Instrument
+
+-   [Survey](https://ncsu.qualtrics.com/jfe/preview/SV_5w2Ayiu2UriAz3M?Q_CHL=preview&Q_SurveyVersionID=current) or Interview Protocol
+
+-   Nomination or Roster
+
+-   Binary or Ordinal
+
+-   Simple or Multiplex
+:::
+:::
+
+::: notes
+**Speaker Notes:**
+:::
+
+## Discussion
+
+Consider the following quesions about a network you may be interested in studying:
+
+-   What is the boundary of this network?
+
+-   What relations within this network might be of interest to your research?
+
+-   What attributes about actors in this network might you want to capture?
+
+-   How might you collect data about these actors and their relations?
+
+# Data Quality
+
+Validity, Reliability, & Measurement Error
+
+::: notes
+**Speaker Notes**:
+
+Similar to data we might typically collect about individual participants in our research, the quality of relational data also depends on reliability, validity, accuracy, and measurement error.
+:::
+
+## Validity
+
+While research on construct validity is slim, and participant recall is suspect, **approaches to improve instrument validity** include:
+
+1.  Focus on more stable relations, as opposed to ones that are time specific;
+
+2.  Limit the number of alters one can nominate;
+
+3.  Ask respondents to try to answer what the others would say;
+
+4.  Consider observations or archival data (e.g. logs, student records).
+
+::: notes
+**Speaker Notes**
+
+Sadly, there has not been a lot of research on the validity of measures of network concepts. This issue is especially relevant to data collected by participant recall. For example, a research may ask students to list five classmates with whom they study, but actual observed behavior may indicate something totally different.
+
+Ways to improve validity include:
+
+-   Focusing on more stable relations, as opposed to ones that are time specific. For example, asking a respondent to identify who one regularly studies with as opposed to asking who one studied with this past month might be the better option.
+
+-   Limit the number of people one can nominate in order to counteract a tendency to under/overreport the number of relations one has
+
+-   Follow up on respondents’ reports, or explicitly asking respondents to try to answer what the others would say as well as what they themselves think and tell respondents that some information may be confirmed with others.
+
+-   Avoid self-report data altogether. If you sources like public records, email, participation in social networking platforms, and school transcripts, you don't need to directly ask respondents to report on their network. Instead, the network is reconstructed from these records and a number of different relations can be captured. For example, using the public Facebook profiles of a set of students in the same school, it is possible to construct a network of who bullies whom, so long as you can precisely define how bullying is measured.
+:::
+
+## Reliability
+
+Recall that reliability is the **extent to which an instrument yields a similar results** every time its applied to the same participant.
+
+-   A common approaches in SNA is **Test-Retest reliability**.
+
+-   Closer ties tend to be reported more reliably than weaker ones
+
+-   Reciprocated relations may be more trustworthy.
+
+::: notes
+**Speaker Notes:**
+
+-   Social network researchers can rely on several common reliability measures, including interobserver reliability, internal consistency reliability, and **test–retest reliability**. The latter, however, is the most commonly used. For example, we may ask a teacher nominates all those other teachers from whom he or she seeks advice about professional matters. The retest repeats the same (or similar) request at a later time. Highly correlated responses indicate high reliability.
+
+-   One thing to note when designing a network study or data collection instrument is that closer ties tend to be reported more reliably than weaker ones.
+
+-   Also, for self-reported ties, reciprocated ties are more trustworthy than non reciprocated. For example, one study asking college students to report whom they spend time with found that only 58% recalled spending time with each other.
+:::
+
+## Measurement Error
+
+::: columns
+::: {.column width="50%"}
+### Measurement Issues
+
+1.  Recall vs. Recognition
+
+2.  Fixed- vs. Free-Choice (Quantity)
+
+3.  Ratings vs. Rankings (Intensity)
+
+4.  Missing Data
+:::
+
+::: {.column width="50%"}
+### Possible Solutions
+
+1.  Use a roster if network size \< 50
+
+2.  No consensus, consider both
+
+3.  Ranking if network size \< 20
+
+4.  Avoid if possible ;)
+:::
+:::
+
+::: notes
+**Speaker Notes:**
+:::
+
+## Discussion
+
+Consider the following questions about your network interest described earlier:
+
+-   What might be some threats to the quality of your data?
+
+-   How might you address or avoid these threats?
+
+## Essential Readings
+
+The following chapters in @carolan2014 cover the topics introduced in this conceptual overview in much greater depth:
+
+-   [Chapter 4: Collecting and Managing Network Data](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-2/sna-chapter-4.pdf)
+
+-   [Chapter 5: Structural Measures for Complete Networks](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-2/sna-chapter-5.pdf)
+
+In preparation for the Module 2 Code-Along and Case Study, the research article by @kellogg2014social is also highly recommended.
+
+::: notes
+**Speaker Notes:**
+
+The Carolan chapter readings focus on issues related to the collection and measurement of these network variables, including issues related to boundary specification, sampling, data storage, and methodologies. In addition, the readings introduce important concepts and measures used to describe static properties of social networks. The conceptual tools and precise measures help us move beyond basic visualization of networks, to analysis of networks quantitatively.
+:::
+
+## Acknowledgements
+
+::: columns
+::: {.column width="20%"}
+![](img/nsf.jpg){fig-align="center" width="80%"}
+:::
+
+::: {.column width="80%"}
+This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
+:::
+:::
+
+## References
