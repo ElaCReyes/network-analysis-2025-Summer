@@ -58,6 +58,7 @@ xaringanExtra::use_panelset()
 
 
 ???
+Notes for Ela
 
 ---
 class: clear, laser
@@ -81,9 +82,10 @@ Hallmarks, Applications, and Discussion
 .panelset[
 
 .panel[.panel-name[Relationships]
-Social network analysis is based on **ties** connecting social **actors** and is motivated by our intuition that relationships between individuals matter:
 
-- no individual is an island, independence is NOT assumed
+Social network analysis is based on **ties** connecting social *actors* (aka nodes, people) and is motivated by our intuition that relationships between individuals matter:
+
+- no individual is an island, independence is **NOT** assumed
 - who we know, are friends with, or talk with matters
 - the influence of these relations is shaped by the larger network
 - location in a social structure shapes one's opportunities and outcomes
@@ -105,7 +107,7 @@ It is firmly grounded in **systematic empirical data collection** using methods 
 .panel[.panel-name[Graphical Imagery]
 
 .pull-left[
-It makes use of **graphic imagery** to represent actors and their relations with one another.
+It makes use of **graphic imagery** (graph theory) to represent actors and their relations with one another.
 
 - Shapes for actors (nodes, vertices)
 - Lines for relations (ties, edges)
@@ -132,7 +134,7 @@ It relies on the use of **mathematical and/or computational models** to succinct
 
 .pull-right[
 ### Inferential Models (Predict)
-- CONCOR
+- CONCOR: CONvergence of iterated CORrelations
 - QAP
 - ERGMS
 ]
