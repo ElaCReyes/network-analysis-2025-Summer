@@ -14,13 +14,86 @@
   <body>
     <textarea id="source">
 
+
+
 class: clear, title-slide, inverse, center, top, middle
 
 # Social Network Analysis and STEM Education
 ## A Brief Introduction and Learning Lab Overview
 ### Dr. Ela Castellanos-Reyes
-### July 13, 2025
+### July 14, 2025
 
+
+
+
+
+---
+
+# Ice Breaker: How do networks surprise you?
+
+.pull-left[
+## Share Your Story
+
+Think of a moment when you felt most surprised by connections!
+
+.font80[
+**Consider sharing about:**
+- A breakthrough moment in your research
+- A time when collaboration clicked perfectly
+- A moment of unexpected connection with students/colleagues]
+]
+
+.pull-right[
+.center[
+&lt;img src="https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExbDFpbGc0b3R6aXp1NjFscGZud2ZveGFicDh0cmo0eW9zNzFvdWcwbSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/64a08zTHKPUFZd7ZDK/giphy.gif" height="300px"/&gt;
+
+### .orange[My Chocolate Frog Moment]
+.font70[*"I felt like Harry when I first saw my network visualizations come to life..."*]
+]
+]
+
+???
+Give participants 2-3 minutes to think, then share in pairs or small groups
+Can also do this as a full group share if time permits
+
+
+---
+# Meet Your Instructor
+
+.pull-left[
+## Ela Castellanos-Reyes
+###  .red[**Assistant Professor**] | NC State 
+
+- Online learning pedagogy
+- Social Network Analysis
+- Instructional Design
+- Learning Analytics
+
+### Contact
+📧 dcastel2@ncsu.edu  
+🌐 [elacastellanosreyes.com](https://www.elacastellanosreyes.com)  
+💼 [@ElaCR](https://www.linkedin.com/in/elacr)
+]
+
+.pull-right[
+.center[
+&lt;img style="border-radius:30%;" src="img/Ela_Photo_Boston.png" height="200px"/&gt;
+]
+
+
+### About Me
+.font90[My research interests include online interactions of adults and learners and identifying course design features that support online learners' social presence through social learning analytics.]
+
+]
+
+???
+Speaker notes for yourself - these won't appear on the slide
+---
+class: clear, laser
+
+.quote["From its earliest origins to it most recent applications to large-scale networks, social network analysis has reflected an **interdependency between theory and method.**"]
+
+.author[~ Brian Carolan]
 
 
 ---
@@ -28,7 +101,7 @@ class: clear, title-slide, inverse, center, top, middle
 
 .pull-left[
 ## Part 1: Intro to SNA
-- The Four Hallmarks of SNA
+- The **Four** Hallmarks of SNA
 - Applications of SNA
 - Discussion
 
@@ -47,15 +120,10 @@ class: clear, title-slide, inverse, center, top, middle
 ???
 Notes for Ela
 
----
-class: clear, laser
-
-.quote["From its earliest origins to it most recent applications to large-scale networks, social network analysis has reflected an **interdependency between theory and method.**"]
-
-.author[~ Brian Carolan]
 
 
 ---
+
 class: clear, inverse, center, middle
 
 # Part 1: Intro to SNA
@@ -70,12 +138,13 @@ Hallmarks, Applications, and Discussion
 
 .panel[.panel-name[Relationships]
 
-Social network analysis is based on ** ties ** connecting social *actors* (aka nodes, people) and is motivated by our intuition that relationships between individuals matter:
+Social network analysis is based on .red[**ties**] connecting social .red[actors] (aka nodes, people) and is motivated by our intuition that relationships between individuals matter:
 
-- no individual is an island, independence is **NOT** assumed
-- who we know, are friends with, or talk with matters
+- no individual is an island, independence is .red[**NOT**] assumed
+- .red[who] we know, are friends with, or talk with matters
 - the influence of these relations is shaped by the larger network
 - location in a social structure shapes one's opportunities and outcomes
+
 
 &lt;br&gt;
 .font80[[Freeman, L. (2004). The development of social network analysis.](https://www.researchgate.net/publication/239228599_The_Development_of_Social_Network_Analysis)]
@@ -87,17 +156,17 @@ It is firmly grounded in **systematic empirical data collection** using methods 
 - observations of social context
 - surveys and questionnaires 
 - historical and administrative records
-- digital learning tools and social media 
+- digital learning tools and social networking sites
 
 ]
 
 .panel[.panel-name[Graphical Imagery]
 
 .pull-left[
-It makes use of **graphic imagery** (graph theory) to represent actors and their relations with one another.
+It makes use of .red[**graphic imagery**] (graph theory) to represent actors and their relations with one another.
 
 - Shapes for actors (nodes, vertices)
-- Lines for relations (ties, edges)
+- Lines for relations (ties, edges, arcs)
 ]
 
 .pull-right[.center[
@@ -110,25 +179,35 @@ It makes use of **graphic imagery** (graph theory) to represent actors and their
 ]
 
 .panel[.panel-name[Mathmatically Based]
-It relies on the use of **mathematical and/or computational models** to succinctly represent the complexity of social life:
+It relies on the use of .red[**mathematical and/or computational models**] to succinctly represent the complexity of social life:
 .pull-left[
-### Network Stats (Describe)
+### Network Statistics (Describe)
 - Centrality
 - Reciprocity
-- Density
+- Density, etc.
 
 ]
 
 .pull-right[
 ### Inferential Models (Predict)
-- CONCOR: CONvergence of iterated CORrelations
-- QAP
-- ERGMS
+.font90[- .red[CONCOR]: CONvergence of iterated CORrelations
+- .red[QAP]: Quadratric Assignment Procedue
+- .red[ERGMs]: Exponential Random Graph Modesl
+- .red[SAOM]: Stochastic Actor Oriented Models]
+
 ]
 ]
 
 
 ]
+
+???
+
+In social network analysis, CONCOR stands for CONvergence of iterated CORrelations. It is an algorithmic method used to partition a social network into groups, or “blocks,” of nodes that are structurally equivalent—meaning they have similar patterns of relationships with other nodes in the network.
+
+QAP stands for Quadratic Assignment Procedure, which is a statistical method used in social network analysis. It’s a permutation test specifically designed to analyze dyadic data (data involving pairs of entities) while controlling for the non-independence that is inherent in network data.
+The QAP works by “scrambling” or permuting the dependent variable data through several iterations to create multiple random datasets. This permutation approach creates a sampling distribution under the null hypothesis, allowing for statistical significance testing when traditional methods might be inappropriate due to the interdependence of observations in network data.
+
 
 ---
 # Applications of SNA
@@ -181,13 +260,13 @@ Building on theories of diffusion, SNA has been used to explain how ideas and re
 ---
 # Discussion
 Consider a social network of which you are a part. 
-1. Who are the members or "actors" in this network? 
+1. Who are the members or .red["actors"] in this network? 
 
-1. What relationships or "ties" connect these actors? 
+1. What relationships or .red["ties"] connect these actors? 
 
-1. Are there any groups or "cliques" within this network?  
+1. Are there any groups or .red["cliques"] (aka groups) within this network?  
 
-1. Are there any actors that "central" to this network? 
+1. Are there any actors that .red["central"] to this network? 
 
 ---
 class: clear, inverse, center, middle
@@ -315,13 +394,12 @@ class: clear, center
 ## .font130[.center[**Thank you!**]]
 
 
-.center[&lt;img style="border-radius:50%;" src="img/kellogg.jpeg" height="200px"/&gt;&lt;br/&gt;**Shaun Kellogg**&lt;br/&gt;&lt;mailto:sbkellog@ncsu.edu&gt;]
+.center[&lt;img style="border-radius:50%;" src="img/Ela_Photo_Boston.png" height="200px"/&gt;&lt;br/&gt;**Ela Castellanos-Reyes**&lt;br/&gt;&lt;mailto:dcastel2@ncsu.edu&gt;]
 
-.pull-left-narrow[.center[&lt;img style="border-radius: 50%;" src="https://www.nsf.gov/images/logos/NSF_4-Color_bitmap_Logo.png" height="150px"/&gt; ]]
+.pull-left-narrow[.center[&lt;img style="border-radius: 50%;" src="img/NSF_LOGO.jpg" height="150px"/&gt; ]]
 
 .pull-right-wide[
 .left[.font70[
-
 This work was supported by the National Science Foundation grant DRL-2025090 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 ]]]
 
@@ -336,7 +414,7 @@ This work was supported by the National Science Foundation grant DRL-2025090 (EC
 "highlightLanguage": "r",
 "countIncrementalSlides": false,
 "ratio": "16:9",
-"slideNumberFormat": "<div class=\"progress-bar-container\">\n <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n </div>\n</div>\n</div>"
+"slideNumberFormat": "<div class=\"progress-bar-container\">\n <div class=\"progress-bar\" style=\"width: calc(%current% / %total% * 100%);\">\n </div>\n</div>\n</div>\n"
 });
 if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   window.dispatchEvent(new Event('resize'));
