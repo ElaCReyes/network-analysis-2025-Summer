@@ -302,11 +302,11 @@ Basic Concepts, Measurement, Groups, and Model
 
 ### Essential Readings
 
-- [The Social Network Perspective](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)
+- [Ch 1: The Social Network Perspective](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)
 
-- [Historical, Theoretical, and Analytical Foundations](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)  
+- [Ch 2: Historical, Theoretical, and Analytical Foundations](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)  
 
-- [Basic Concepts](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)  
+- [Ch 3: Basic Concepts](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)  
 
 ] 
 
@@ -335,9 +335,9 @@ Basic Concepts, Measurement, Groups, and Model
 
 ### Essential Readings
 
-- [Collecting and Managing Network Data](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)
+- [Ch 4: Collecting and Managing Network Data](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)
 
-- [Structural Measures for Complete Networks](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)  
+- [Ch 5: Structural Measures for Complete Networks](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)  
 ]
 
 .pull-right[
@@ -349,38 +349,38 @@ Basic Concepts, Measurement, Groups, and Model
 - [Kellog & Edelman (2015) Guiding Study: Massively Open Online Course for Educators (MOOC-Ed) network dataset](https://bera-journals.onlinelibrary.wiley.com/doi/abs/10.1111/bjet.12312)
 
 ### Learning Lab 2 Badge
-- [Network Measurement](https://laser-institute.github.io/network-analysis/lab-2/sna-lab-2-badge.html
-https://elacreyes.github.io/network-analysis-2025-Summer/module-2/sna-1-badge.html
-)
+- [Network Measurement](https://elacreyes.github.io/network-analysis-2025-Summer/module-2/sna-lab-2-badge.html)
 
 ]
 
 ---
 # SNA Lab 3: Group & Egocentric Analysis
 
-
 .pull-left[
 ### Intro Presentation 
-[Key Concepts & Code-Along](https://laser-institute.github.io/network-analysis/lab-3/sna-lab-3-slides.html)
+- [Conceptual Overview](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-3-conceptual-overview.html)
+- [Code-Along](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-3-code-along-R.html)
 
 ### Essential Readings
 
-- [Groups and Positions in Complete Networks](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-4/carolan-sna-ch-6.pdf)
+- [Ch 6: Groups and Positions in Complete Networks](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)
 
-- [Measures for Egocentric Network Analysis](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-4/carolan-sna-ch-7.pdf)  
+- [Ch 7: Measures for Egocentric Network Analysis](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)  
 ] 
 
 .pull-right[
-### Learning Lab 3 Badge
-- [Groups & Egos](https://laser-institute.github.io/network-analysis/lab-3/sna-lab-3-badge.html)
 
 ### Case Study
 
-- [SNA Case Study: Components, Cliques, & Key Actors](https://laser-institute.github.io/network-analysis/lab-3/sna-lab-3-case-study-key.html)
+- [SNA Case Study: Components, Cliques, & Key Actors - KEY](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-lab-3-case-study-key.html)
+
 
 - [Guiding Study: Hashtag Common Core](https://www.hashtagcommoncore.com)
-]
 
+### Learning Lab 3 Badge
+- [Groups & Egos](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-lab-3-badge.html)
+
+]
 
 ---
 # SNA Lab 4: Inference & Modeling 
@@ -388,25 +388,28 @@ https://elacreyes.github.io/network-analysis-2025-Summer/module-2/sna-1-badge.ht
 
 .pull-left[
 ### Intro Presentation 
-[Key Concepts & Code-Along](https://laser-institute.github.io/network-analysis/lab-4/sna-lab-4-slides.html)
+- [Conceptual Overview](https://elacreyes.github.io/network-analysis-2025-Summer/module-4/sna-4-conceptual-overview.html)
+- [Code-Along](https://elacreyes.github.io/network-analysis-2025-Summer/module-4/sna-4-code-along-R.html)
+
 
 ### Essential Readings
 
-- [Statistical Inference With Network Data](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-4/carolan-sna-ch-8.pdf)
+- [Ch 8: Statistical Inference With Network Data](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)
 
-- [Network Data and Statistical Models](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-4/carolan-sna-ch-9.pdf)  
+- [Ch 9: Network Data and Statistical Models](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)  
 ] 
 
 .pull-right[
-### Learning Lab 4 Badge
-- [Models & Inference](https://laser-institute.github.io/network-analysis/lab-4/sna-lab-4-badge.html)
 
 ### Case Study
 
-- [SNA Case Study: Birds of a Feather Lead Together](https://laser-institute.github.io/network-analysis/lab-4/sna-lab-4-case-key.html)
+- [SNA Case Study: Birds of a Feather Lead Together - KEY](https://elacreyes.github.io/network-analysis-2025-Summer/module-4/sna-lab-4-case-study-key.html)
 
-- [Guiding Study: The ebb and flow of social network ties between district leaders.](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-4/daly-ebb-flow.pdf)
+- [Guiding Study: The ebb and flow of social network ties between district leaders.](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)
 ]
+
+### Learning Lab 4 Badge
+- [Models & Inference](https://elacreyes.github.io/network-analysis-2025-Summer/module-4/sna-lab-4-badge.html)
 
 ---
 class: clear, center
