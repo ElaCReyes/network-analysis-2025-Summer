@@ -1,6 +1,8 @@
 ---
 title: "Intro to Social Network Analysis"
 subtitle: "SNA Module 1: A Conceptual Overview"
+author: "Dr. Ela Castellanos-Reyes"
+date: "07/15/25"
 format:
   revealjs: 
     slide-number: c/t
