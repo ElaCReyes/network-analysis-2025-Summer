@@ -275,6 +275,8 @@ Let's start by importing two .csv files that contain data about the nodes and th
 
 See path module-1\>data\> \[csv files are here\]
 
+[GitHub data folder](https://github.com/ElaCReyes/network-analysis-2025-Summer/tree/main/module-1/data)
+
 ```{r}
 #| echo: true
 #| message: false
