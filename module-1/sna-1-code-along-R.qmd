@@ -572,7 +572,9 @@ ggraph(student_network, layout = "stress") +
 
 ## What's Next?
 
--   SNA Case Study - KEY: [Who's Friends with Who in Middle School?](https://elacreyes.github.io/network-analysis-2025-Summer/module-1/sna-1-case-study-key-R.html)
+-   [SNA Case Study: Who's Friends with Who in Middle School? .qmd (Quarto) File](https://github.com/ElaCReyes/network-analysis-2025-Summer/blob/main/module-1/sna-1-case-study-R.qmd) You may use Posit or Download the file and work in RStudio
+
+-   SNA Case Study - KEY: [Who's Friends with Who in Middle School?](https://elacreyes.github.io/network-analysis-2025-Summer/module-1/sna-1-case-study-key-R.html) Open in case of emergency :)
 
 -   Guiding Study: [Behavioral versus cognitive classroom friendship networks.](https://drive.google.com/drive/folders/1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm?usp=sharing)
 
