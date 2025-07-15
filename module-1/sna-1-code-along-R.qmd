@@ -67,10 +67,10 @@ teacher_network <- tbl_graph(edges = teacher_edges,
 
 ## Guiding Study
 
-::: panel-tabset
+:::::: panel-tabset
 ## Context
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 Revisiting early work in the field of sociometry, this study by @pittinsky2008behavioral **assesses the level of agreement between teacher perceptions and student reports of classroom friendships** among middle school students.
 :::
@@ -78,7 +78,7 @@ Revisiting early work in the field of sociometry, this study by @pittinsky2008be
 ::: {.column width="30%"}
 ![Behavioral vs. Cognitive Classroom Friendships [@pittinsky2008behavioral]](img/pittinsky-carolan.png){width="70%"}
 :::
-:::
+:::::
 
 ## Questions
 
@@ -105,7 +105,7 @@ The central question guiding this investigation was:
 -   Students reported significantly more reciprocated friendship ties than the teacher perceived.
 
 -   Observed level of agreement varied across classes and generally increased over time.
-:::
+::::::
 
 ::: notes
 **Speaker Notes:**
@@ -113,7 +113,7 @@ The central question guiding this investigation was:
 
 ## Load Packages
 
-::: panel-tabset
+:::::: panel-tabset
 ## R Libraries
 
 Let's start by creating a new R script and loading the {tidyverse} package which we'll use to import our network data files:
@@ -134,7 +134,7 @@ library(tidyverse)
 
 ## Network Packages
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Data Management\
 ![](img/tidygraph.png){width="398"}\
@@ -146,7 +146,7 @@ Data Visualization\
 ![](img/ggraph.png){width="346"}\
 [ggraph](https://ggraph.data-imaginist.com/index.html)
 :::
-:::
+:::::
 
 ## Your Turn
 
@@ -157,7 +157,7 @@ Load the {tidygraph} and {ggraph} packages.
 #
 #
 ```
-:::
+::::::
 
 # Wrangle
 
@@ -165,10 +165,10 @@ Intro to Network Data Structures
 
 ## Network Data Structures
 
-::: panel-tabset
+:::::::::::: panel-tabset
 ### Node-List
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Consistent with typical data storage, node-lists often include:
 
@@ -194,11 +194,11 @@ student_attributes |>
 
 ```
 :::
-:::
+:::::
 
 ### Edge-List
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Radically different than typical data storage, edge-lists include:
 
@@ -220,11 +220,11 @@ student_edges |>
 
 ```
 :::
-:::
+:::::
 
 ### Adjacency Matrix
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Also radically different, an adjacency matrix includes:
 
@@ -249,7 +249,7 @@ teacher_matrix[1:7, 1:7] |>
 
 ```
 :::
-:::
+:::::
 
 ### Discuss
 
@@ -264,7 +264,7 @@ Take a look at one of the network datasets in the data folder under the Files Ta
 -   What are some things you notice about this dataset?
 
 -   What questions do you have about this dataset?
-:::
+::::::::::::
 
 ## Import Data
 
@@ -272,6 +272,8 @@ Take a look at one of the network datasets in the data folder under the Files Ta
 ### Read Data
 
 Let's start by importing two .csv files that contain data about the nodes and the edges in our student friendship network:
+
+See path module-1\>data\> \[csv files are here\]
 
 ```{r}
 #| echo: true
@@ -374,10 +376,10 @@ Making Simple and Sophisticated Sociograms
 
 ## A Simple Sociogram
 
-::: panel-tabset
+:::::::::::: panel-tabset
 ## plot()
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Run the following code to make a simple sociogram:
 
@@ -399,11 +401,11 @@ The `plot()` function is base R's simple but limited solution for plotting graph
 plot(student_network)
 ```
 :::
-:::
+:::::
 
 ## autograph()
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 The `autograph()` function is ggraph's simple but limited solution for plotting sociograms.
 
@@ -421,11 +423,11 @@ autograph(student_network)
 autograph(student_network)
 ```
 :::
-:::
+:::::
 
 ## Arguments
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Both functions allow a small degree of customization, but are still limited.
 
@@ -447,17 +449,17 @@ autograph(student_network,
           node_colour = gender)
 ```
 :::
-:::
+:::::
 
 ## Discuss
 
 1.  In what situations might these limited functions be useful?
 2.  When might they inappropriate to use?
-:::
+::::::::::::
 
 ## A Sophisticated Sociogram
 
-::: panel-tabset
+:::::::::::: panel-tabset
 ### Set Graph
 
 The `ggraph()` function is the first function required to build a sociogram. Try running this function on out `student_network` and see what happens:
@@ -474,7 +476,7 @@ This function serves two critical roles:
 
 ### "Add" Nodes
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Let's “add” nodes to our sociogram using the `+` operator and the `geom_node_point()` function:
 
@@ -495,11 +497,11 @@ ggraph(student_network) +
   geom_node_point() 
 ```
 :::
-:::
+:::::
 
 ### "Add" Edges
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Both functions allow a small degree of customization, but are still limited.
 
@@ -521,11 +523,11 @@ ggraph(student_network) +
   geom_edge_link()
 ```
 :::
-:::
+:::::
 
 ### Polish
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 <br> <br> The {ggraph} packages allows for some very fairly sophisticated sociograms...
 :::
@@ -546,7 +548,7 @@ ggraph(student_network, layout = "stress") +
   theme_graph()
 ```
 :::
-:::
+:::::
 
 ### Code
 
@@ -566,17 +568,17 @@ ggraph(student_network, layout = "stress") +
                  repel=TRUE) +
   theme_graph()
 ```
-:::
+::::::::::::
 
 ## What's Next?
 
--   SNA Case Study: [Who's Friends with Who in Middle School?](https://laser-institute.github.io/network-analysis/lab-1/sna-lab-1-case-study-key.html)
+-   SNA Case Study - KEY: [Who's Friends with Who in Middle School?](https://elacreyes.github.io/network-analysis-2025-Summer/module-1/sna-1-case-study-key-R.html)
 
--   Guiding Study: [Behavioral versus cognitive classroom friendship networks.](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/pittinsky-class-friendships.pdf)
+-   Guiding Study: [Behavioral versus cognitive classroom friendship networks.](https://drive.google.com/drive/folders/1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm?usp=sharing)
 
 ## Acknowledgements
 
-::: columns
+::::: columns
 ::: {.column width="20%"}
 ![](img/nsf.jpg){fig-align="center" width="80%"}
 :::
@@ -584,6 +586,6 @@ ggraph(student_network, layout = "stress") +
 ::: {.column width="80%"}
 This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 :::
-:::
+:::::
 
 ## References

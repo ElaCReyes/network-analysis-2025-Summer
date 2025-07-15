@@ -8,7 +8,7 @@
 <link href="sna-1-code-along-R_files/libs/quarto-html/light-border.css" rel="stylesheet">
 <link href="sna-1-code-along-R_files/libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="sna-1-code-along-R_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.4.550">
+  <meta name="generator" content="quarto-1.5.57">
 
   <title>Data Structures &amp; Sociograms</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -41,7 +41,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -422,7 +422,7 @@
 <section id="data-intensive-research-workflow" class="slide level2">
 <h2>Data Intensive Research-Workflow</h2>
 
-<img data-src="img/workflow.png" class="quarto-figure quarto-figure-center r-stretch" style="width:40.0%"><p class="caption">From Learning Analytics Goes to School <span class="citation" data-cites="krumm2018">(<a href="#/references" role="doc-biblioref" onclick="">Krumm, Means, and Bienkowski 2018</a>)</span></p><aside class="notes">
+<img data-src="img/workflow.png" style="width:40.0%" class="r-stretch quarto-figure-center"><p class="caption">From Learning Analytics Goes to School <span class="citation" data-cites="krumm2018">(<a href="#/references" role="doc-biblioref" onclick="">Krumm, Means, and Bienkowski 2018</a>)</span></p><aside class="notes">
 <p><strong>Speaker Notes:</strong></p>
 <p>Just as a quick refresher from our Learning Analytics Workflow Module, the workflow pictured here outlines a basic process intended to support researchers, practitioners, and data scientists prepare for a data-intensive analysis and communication of one’s findings. Different processes in this workflow as they relate to specific LA technique are highlighted in our code-along and presented in much greater detail in each case study.</p>
 <p>If you’re interested in learning more about this workflow, I highly recommend the excellent book, Learning Analytics Goes to School, by Andrew Krumm, Barbara Means, and Marie Bienkowski.</p>
@@ -459,8 +459,7 @@
 <figcaption>Behavioral vs.&nbsp;Cognitive Classroom Friendships <span class="citation" data-cites="pittinsky2008behavioral">(<a href="#/references" role="doc-biblioref" onclick="">Pittinsky and Carolan 2008</a>)</span></figcaption>
 </figure>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-1-2">
 <p>The central question guiding this investigation was:</p>
@@ -525,8 +524,7 @@
 <p>Data Visualization<br>
 <img data-src="img/ggraph.png" width="346"><br>
 <a href="https://ggraph.data-imaginist.com/index.html">ggraph</a></p>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-2-3">
 <p>Load the {tidygraph} and {ggraph} packages.</p>
@@ -562,7 +560,7 @@
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: right;">id</th>
@@ -605,8 +603,7 @@
 </table>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-3-2">
 <div class="columns">
@@ -620,7 +617,7 @@
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: right;">from</th>
@@ -663,8 +660,7 @@
 </table>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-3-3">
 <div class="columns">
@@ -678,7 +674,7 @@
 </div><div class="column" style="width:50%;">
 <div class="cell">
 <div class="cell-output-display">
-<table>
+<table class="caption-top">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -766,8 +762,7 @@
 </table>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-3-4">
 <p>Take a look at one of the network datasets in the data folder under the Files Tab in RStudio and consider the following:</p>
@@ -789,6 +784,7 @@
 <div class="tab-content">
 <div id="tabset-4-1">
 <p>Let’s start by importing two .csv files that contain data about the nodes and the edges in our student friendship network:</p>
+<p>See path module-1&gt;data&gt; [csv files are here]</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href=""></a>student_nodes <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"lab-1/data/student-attributes.csv"</span>)</span>
 <span id="cb3-2"><a href=""></a></span>
@@ -911,8 +907,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-6-2">
 <div class="columns">
@@ -931,8 +926,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-6-3">
 <div class="columns">
@@ -953,8 +947,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-6-4">
 <ol type="1">
@@ -999,8 +992,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-7-3">
 <div class="columns">
@@ -1021,8 +1013,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-7-4">
 <div class="columns">
@@ -1038,8 +1029,7 @@
 </div>
 </div>
 </div>
-</div>
-</div>
+</div></div>
 </div>
 <div id="tabset-7-5">
 <p>With a fair bit of coding:</p>
@@ -1062,8 +1052,8 @@
 <section id="whats-next" class="slide level2">
 <h2>What’s Next?</h2>
 <ul>
-<li><p>SNA Case Study: <a href="https://laser-institute.github.io/network-analysis/lab-1/sna-lab-1-case-study-key.html">Who’s Friends with Who in Middle School?</a></p></li>
-<li><p>Guiding Study: <a href="https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/pittinsky-class-friendships.pdf">Behavioral versus cognitive classroom friendship networks.</a></p></li>
+<li><p>SNA Case Study - KEY: <a href="https://elacreyes.github.io/network-analysis-2025-Summer/module-1/sna-1-case-study-key-R.html">Who’s Friends with Who in Middle School?</a></p></li>
+<li><p>Guiding Study: <a href="https://drive.google.com/drive/folders/1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm?usp=sharing">Behavioral versus cognitive classroom friendship networks.</a></p></li>
 </ul>
 </section>
 <section id="acknowledgements" class="slide level2">
@@ -1077,8 +1067,7 @@
 </div>
 </div><div class="column" style="width:80%;">
 <p>This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.</p>
-</div>
-</div>
+</div></div>
 </section>
 <section id="references" class="slide level2 smaller scrollable">
 <h2>References</h2>
@@ -1379,18 +1368,7 @@ Pittinsky, Matthew, and Brian V Carolan. 2008. <span>“Behavioral Versus Cognit
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1422,7 +1400,47 @@ Pittinsky, Matthew, and Brian V Carolan. 2008. <span>“Behavioral Versus Cognit
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
       function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
@@ -1459,7 +1477,11 @@ Pittinsky, Matthew, and Brian V Carolan. 2008. <span>“Behavioral Versus Cognit
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

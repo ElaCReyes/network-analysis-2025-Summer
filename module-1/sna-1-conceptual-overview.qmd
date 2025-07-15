@@ -28,7 +28,7 @@ editor: visual
 :::
 
 ::: {.column width="70%"}
-> From its earliest origins to it most recent applications to large-scale networks, social network analysis has reflected an *interdependency between theory and method*.
+> From its earliest origins to it most recent applications to large-scale networks, social network analysis has reflected an *interdependency between **theory** and **method*****.**
 
 ~\~ From SNA and Education by Bryan @carolan2014~
 :::
@@ -58,10 +58,10 @@ This first section introduces what Carolan describes as the four defining freatu
 
 SNA emphasizes structuralism based on **ties** connecting social **actors** and is motivated by our intuition that relationships matter:
 
--   no individual is an island, independence is NOT assumed
--   who we know, are friends with, or talk with matters
--   the influence of these relations is shaped by the larger network
--   location in a social structure shapes one's opportunities and outcomes
+-   no individual is an island, **independence is NOT assumed**
+-   **who** we know, are friends with, or talk with matters
+-   the influence of these relations is **shaped by the larger network**
+-   **location** in a social structure shapes one's opportunities and outcomes
 
 ::: notes
 **Speaker Notes:**
@@ -148,13 +148,13 @@ Answer to the question:
 ::: {.column width="50%"}
 **Network Models (Test & Predict)**
 
--   CONCOR
+-   **CONCOR**: CONvergence of iterated CORrelations
 
--   QAP
+-   **QAP**: Quadratric Assignment Procedure
 
--   ERGMS
+-   **ERGMS**: Exponential Random Graph Models
 
--   Regression
+-   **SAOM**: Stochastic Actor Oriented Models
 :::
 :::::
 
@@ -166,6 +166,20 @@ SNA like other research methods relies on the use of mathematical and/or computa
 Descriptive measures such as size, centrality, reciprocity, and density are used to describe characteristics of individuals or groups in a network and the network as a whole. We'll explore these measures in Module 2.
 
 SNA also has a wide range of statistical models tailored to working with relational data for hypothesis testing and building predictive models, which we'll explore Module 3.
+
+-   **Centrality**: theoretical constructs tha caracterize a **node's position** within the network structure
+
+-   **Density:** Proportion of ties possible
+
+**Some Models are:**
+
+In social network analysis, **CONCOR** stands for CONvergence of iterated CORrelations. It is an algorithmic method used to partition a social network into groups, or “blocks,” of nodes that are structurally equivalent—meaning they have similar patterns of relationships with other nodes in the network.
+
+**QAP stands for Quadratic Assignment Procedure,** It’s a permutation test specifically designed to analyze dyadic data (data involving pairs of entities) while controlling for the non-independence that is inherent in network data. The QAP works by “scrambling” or permuting the dependent variable data through several iterations to create multiple random datasets. This permutation approach creates a sampling distribution under the null hypothesis, allowing for statistical significance testing when traditional methods might be inappropriate due to the interdependence of observations in network data.\
+\
+**Exponential Random Graph Models:** Family of staistical models that can test whether certain patterns in the network occur more often than what we expect by chance.
+
+Stochastic Actor-Oriented Model (SAOM) is a statistical method for modeling the evolution of social networks and individual behavior over time, capturing how actors form, maintain, or dissolve social ties and how their attributes co-evolve with network structure
 :::
 
 # Key Terms
@@ -246,7 +260,7 @@ Finally, actors, ties, and the network as a whole may also contain information, 
 ::: {.column width="50%"}
 -   **Individual** attributes based on properties of individual actors (e.g., gender, academic achievement)
 
--   **Relational** attributes based on an actor's direct ties with others (e.g., degree, reciprocity, or tie strength)
+-   **Relational** attributes based on an actor's direct ties with others (e.g., tie strength, kinship)
 
 -   **Structural** attributes based on the entire network of connections actors ties with others (e.g., density, centralization, or reciprocity)
 :::
@@ -285,7 +299,7 @@ In this section we'll introduce a few broad research areas where that have benef
 
 ## Social Capital
 
-Social capital is an intangible asset existing in the connections and shared values that people have. SNA provides a means to actually measure & model social capital and has be used to better understand:
+Social capital is an intangible asset existing in the connections and shared values that people have. SNA provides a means to actually measure and model social capital and has be used to better understand:
 
 -   how social relations advantages some students [@maroulis2008does]
 
@@ -295,7 +309,7 @@ Social capital is an intangible asset existing in the connections and shared val
 
 ## Selection & Influence
 
-Educational researchers have used to better understand why people connect (**selection**) and how these connections shape their opportunities and outcomes. Examples include:
+Educational researchers have used to better understand why people choose to connect with some (and not all) (**selection**) and how these connections shape their opportunities and outcomes. Examples include:
 
 -   who school leaders collaborate and confide in and why [@daly2010bridge]
 
@@ -323,11 +337,13 @@ SNA has been used to explain how ideas and resources spread within and between n
 Note that we've rushed through a a lot of examples of SNA applications in a short amount of time but several of these we'll be exploring in greater depth through our readings and our case studies.
 
 Also note that if you are interested in reading any of these articles, most are freely available online and linked on the references slide at the end of the presentation.
+
+**Diffusion:** The spread of something through the network (virus, information item)
 :::
 
 ## Closing Activity
 
-Using the materials provided at your table or using a drawing tool on your personal laptop or device, create a simple sociogram of your network and think about the following questions:
+Using the materials provided at your table or using a drawing tool on your personal laptop or device, create a simple sociogram of **your network of choice** and think about the following questions:
 
 1.  *How will you represent actors and their relationships?*
 2.  *Where will you position the actors in your sociogram?*
@@ -344,11 +360,11 @@ If time is short, consider cutting this activity but do have a short discussion 
 
 The following chapters in @carolan2014 cover the topics introduced in this conceptual overview in much greater depth:
 
--   [Chapter 1: The Social Network Perspective and Educational Research Introduction](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/carolan-network-perspective.pdf)
+-   [Chapter 1: The Social Network Perspective and Educational Research Introduction](https://drive.google.com/drive/folders/1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm)
 
--   [Chapter 2: Historical, Theoretical, and Analytical Foundations](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/carolan-history-theory.pdf)
+-   [Chapter 2: Historical, Theoretical, and Analytical Foundations](https://drive.google.com/drive/folders/1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm)
 
--   [Chapter 3](https://methods.sagepub.com/book/social-network-analysis-and-education/n3.xml): [Basic Concepts](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-1/carolan-basic-concepts.pdf)
+-   [Chapter 3](https://methods.sagepub.com/book/social-network-analysis-and-education/n3.xml): [Basic Concepts](https://drive.google.com/drive/folders/1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm)
 
 In preparation for the Module 1 Code-Along and Case Study, the research article by @pittinsky2008behavioral is also highly recommended.
 
