@@ -49,10 +49,10 @@ Guiding Research & Network Packages
 
 ## Guiding Study
 
-::: panel-tabset
+:::::: panel-tabset
 ## Context
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 This mixed-methods case study used both SNA and qualitative methods to better understand peer support in MOOC-Eds through an examination of the characteristics, mechanisms, and outcomes of peer networks.
 :::
@@ -60,7 +60,7 @@ This mixed-methods case study used both SNA and qualitative methods to better un
 ::: {.column width="30%"}
 ![Behavioral vs. Cognitive Classroom Friendships [@kellogg2014social]](img/irrodl-article.png){width="70%"}
 :::
-:::
+:::::
 
 ## Questions
 
@@ -87,7 +87,7 @@ This study involves **quantifying and visualizing the ties and overall structure
 -   Reciprocators made up the largest proportion of educators in both courses
 
 -   Significant effects were found for the relational mechanism of reciprocity, but not for a popularity effect.
-:::
+::::::
 
 ::: notes
 **Speaker Notes:**
@@ -95,7 +95,7 @@ This study involves **quantifying and visualizing the ties and overall structure
 
 ## Load Packages
 
-::: panel-tabset
+:::::: panel-tabset
 ### R Libraries
 
 Let's start by creating a new R script and loading the following packages introduced in the previous module:
@@ -120,7 +120,7 @@ library(ggraph)
 
 ### Network Packages
 
-::: columns
+::::: columns
 ::: {.column width="80%"}
 The {igraph} package and its collection of network analysis tools provide pain-free implementation of graph algorithms fast handling of large graphs, with millions of vertices and edges.
 
@@ -134,7 +134,7 @@ Both {tidygraph} and {ggraph} used in the previous lab depend heavily on the {ig
 
 [igraph](https://igraph.org)
 :::
-:::
+:::::
 
 ### Your Turn
 
@@ -145,7 +145,7 @@ Load the {igraph} package.
 #
 #
 ```
-:::
+::::::
 
 # Wrangle
 
@@ -202,7 +202,7 @@ Think about the questions below and be prepared to share your response:
 
 ## Create Network Object
 
-::: panel-tabset
+:::::: panel-tabset
 ### Convert Edgelist
 
 Before we can begin analyzing our network data in R, we need to convert to a network class R object. Run the following code in your R script:
@@ -217,7 +217,7 @@ dlt1_network <- tbl_graph(edges = dlt1_ties,
 
 ### View Network
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 In your R script, use the `autograph()` function that we learned about in the previous module to take a quick look at our `dlt1_network`.
 
@@ -235,7 +235,7 @@ autograph(dlt1_network)
 
 You should see something like this.
 :::
-:::
+:::::
 
 ### View Stats
 
@@ -256,7 +256,7 @@ Think about the questions below:
 2.  What else do you notice about this network?
 
 3.  What questions, if any, do have about this network?
-:::
+::::::
 
 ::: notes
 **Speaker Notes:**
@@ -272,10 +272,10 @@ Network Density, Centrality, & Reciprocity
 
 ## Network Density
 
-::: panel-tabset
+::::::::: panel-tabset
 ### Definition
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 In its simplest form, network density is **the ratio of existing ties in a network to all possible ties** that could potentially exist, regardless of whether they do.
 :::
@@ -283,7 +283,7 @@ In its simplest form, network density is **the ratio of existing ties in a netwo
 ::: {.column width="50%"}
 ![Which of these two networks has a higher density?](img/density.jpeg)
 :::
-:::
+:::::
 
 ### Significance
 
@@ -314,7 +314,7 @@ How would you interpret this measure?
 
 ### Discuss
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 We know there 2529 edges in the DLT 1 network (pictured right), but **how many possible edges** could there be?
 
@@ -329,8 +329,8 @@ autograph(dlt1_network) +
   theme_graph()
 ```
 :::
-:::
-:::
+:::::
+:::::::::
 
 ::: notes
 **Speaker Notes:**
@@ -338,10 +338,10 @@ autograph(dlt1_network) +
 
 ## Reciprocity
 
-::: panel-tabset
+::::::::: panel-tabset
 ### Definition
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 Reciprocity is the **degree to which actors in a directed network select one another** or the mutuality of the network's ties
 
@@ -355,7 +355,7 @@ Reciprocity is the **degree to which actors in a directed network select one ano
 ::: {.column width="50%"}
 ![](img/reciprocated-ties.png)
 :::
-:::
+:::::
 
 ### Significance
 
@@ -369,7 +369,7 @@ Reciprocity is the **degree to which actors in a directed network select one ano
 
 ### Implementation
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 At the network-level, reciprocity is a measure of the likelihood of vertices in a directed network to be mutually linked.
 
@@ -390,8 +390,8 @@ reciprocity(dlt1_network)
 
 How would you interpret this measure?
 :::
-:::
-:::
+:::::
+:::::::::
 
 ::: notes
 **Speaker Notes:**
@@ -399,10 +399,10 @@ How would you interpret this measure?
 
 ## Network Centraliztion
 
-::: panel-tabset
+::::::::: panel-tabset
 ### Definition
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 A key structural property of complete networks is the concept of centralization, or **the extent to which relations are focused on one or a small set of actors**.
 :::
@@ -410,7 +410,7 @@ A key structural property of complete networks is the concept of centralization,
 ::: {.column width="50%"}
 ![Which of these two networks is more centralized?](img/density.jpeg)
 :::
-:::
+:::::
 
 ### Significance
 
@@ -422,7 +422,7 @@ A key structural property of complete networks is the concept of centralization,
 
 ### Implementation
 
-::: columns
+::::: columns
 ::: {.column width="50%"}
 The {igraph} package has a simple `centr_degree()` function for calculating degree centrality.
 
@@ -440,7 +440,7 @@ Let's apply to our dlt1_network:
 centr_degree(dlt1_network)
 ```
 :::
-:::
+:::::
 
 ### Output
 
@@ -449,7 +449,7 @@ Let's interpret this output!
 ```{r}
 centr_degree(dlt1_network)
 ```
-:::
+:::::::::
 
 ::: notes
 **Speaker Notes:**
@@ -463,7 +463,7 @@ centr_degree(dlt1_network)
 
 ## Acknowledgements
 
-::: columns
+::::: columns
 ::: {.column width="20%"}
 ![](img/nsf.jpg){fig-align="center" width="80%"}
 :::
@@ -471,6 +471,6 @@ centr_degree(dlt1_network)
 ::: {.column width="80%"}
 This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 :::
-:::
+:::::
 
 ## References
