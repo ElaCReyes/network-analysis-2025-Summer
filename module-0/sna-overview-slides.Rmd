@@ -382,13 +382,14 @@ Basic Concepts, Measurement, Groups, and Model
 .font70[
 - [SNA Case Study: Components, Cliques, & Key Actors](https://github.com/ElaCReyes/network-analysis-2025-Summer/blob/main/module-3/sna-3-case-study-R.qmd) You may use Posit or Download the file and work in RStudio 
 
-- [SNA Case Study - KEY](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-lab-3-case-study-key-R.html) Open in Case of Emergency :D
+- [SNA Case Study - KEY](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-3-case-study-key-R) Open in Case of Emergency :D
 
 
 - [Guiding Study: Hashtag Common Core](https://www.hashtagcommoncore.com)
 
 ### Learning Lab 3 Badge
-- [Groups & Egos](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-lab-3-badge.html)
+- [Groups & Egos](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-3-badge.html)
+- [Quarto File](https://github.com/ElaCReyes/network-analysis-2025-Summer/blob/main/module-3/sna-3-badge.qmd) 
 
 ]
 
