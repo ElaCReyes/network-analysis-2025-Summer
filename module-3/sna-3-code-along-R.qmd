@@ -54,10 +54,10 @@ Introduction to #COMMONCORE
 
 ## Guiding Study
 
-::: panel-tabset
+:::::: panel-tabset
 ### Context
 
-::: columns
+::::: columns
 ::: {.column width="70%"}
 Our third SNA learning lab is inspired by the [#commoncore Project](https://www.hashtagcommoncore.com/), which examined the intense debate surrounding the Common Core State Standards education reform as it played out on Twitter.
 :::
@@ -65,7 +65,7 @@ Our third SNA learning lab is inspired by the [#commoncore Project](https://www.
 ::: {.column width="30%"}
 ![#COMMONCORE [@supovitz2017commoncore]](img/commoncore.jpg)
 :::
-:::
+:::::
 
 ### Questions
 
@@ -84,7 +84,7 @@ The central question guiding the #COMMONCORE Project was:
 -   In Act 1, The Giant Network, the authors **identified five major sub-communities**, or factions, including: (1) supporters, (2) opponents inside education, and (3) opponents outside of education.
 
 -   In Act 2, Central Actors, they noted that most of these participants were casual contributors and distinguished between two types of **central actors** on Twitter: Transmitters and Transceivers.
-:::
+::::::
 
 ::: notes
 **Speaker Notes:**
@@ -424,7 +424,7 @@ ccss_network |>
 
 ## Acknowledgements
 
-::: columns
+::::: columns
 ::: {.column width="20%"}
 ![](img/nsf.jpg){fig-align="center" width="80%"}
 :::
@@ -432,6 +432,6 @@ ccss_network |>
 ::: {.column width="80%"}
 This work was supported by the National Science Foundation grants DRL-2025090 and DRL-2321128 (ECR:BCSER). Any opinions, findings, and conclusions expressed in this material are those of the authors and do not necessarily reflect the views of the National Science Foundation.
 :::
-:::
+:::::
 
 ## References
