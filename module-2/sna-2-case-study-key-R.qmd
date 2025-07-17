@@ -140,11 +140,14 @@ Both {tidygraph} and {ggraph} depend heavily [igraph network analysis package](
 Use the code chunk below to load the {tidyverse}, {tidygraph}, {ggraph}, and {igraph} packages that we'll be using in this case study. Also load the {janitor} package that we'll be using to quickly clean up our variable names:
 
 ```{r load_libraries}
-library(janitor)
-library(tidyverse)
-library(igraph)
-library(tidygraph)
-library(ggraph)
+install.packages("pacman")
+pacman::p_load(ggplot2, tidyverse, readr, igraph, tidygraph, ggraph)
+
+# library(janitor) # for data wranglig
+# library(tidyverse)
+# library(igraph)
+# library(tidygraph)
+# library(ggraph)
 ```
 
 ## 2. Wrangle
@@ -203,6 +206,22 @@ dlt1_ties <- read_csv("data/dlt1-edges.csv",
 dlt1_ties
 ```
 
+![]()
+
+```{r}
+dlt2_ties <- read_csv("data/dlt2-edges.csv", 
+                      col_types = cols(sender = col_character(), 
+                                       reciever = col_character(), 
+                                       category = col_skip(), 
+                                       comment_id = col_character(), 
+                                       discussion_id = col_character())) |>
+  clean_names()
+
+dlt2_ties
+
+# class(dlt2_ties$sender)
+```
+
 Note the addition of the `col_types =` argument for changing the column types to character strings since the numbers for those particular columns indicate actors (`Sender` and `Reciever`) and attributes (`Comment_ID` and `Discussion_Id`). We also skipped the `Category Text` since this was left blank for deidentification purposes.
 
 #### **👉 Your Turn** **⤵**
@@ -240,6 +259,15 @@ Let's use the code chunk below to import the `dlt1-nodes.csv` attribute file and
 dlt1_actors <- read_csv("data/dlt1-nodes.csv", 
                    col_types = cols(UID = col_character(), 
                                     Facilitator = col_character(), 
+                                    expert = col_character(), 
+                                    connect = col_character())) |>
+  clean_names()
+```
+
+```{r}
+dlt2_actors <- read_csv("data/dlt2-nodes.csv", 
+                   col_types = cols(uid = col_character(), 
+                                    facilitator = col_character(), 
                                     expert = col_character(), 
                                     connect = col_character())) |>
   clean_names()
@@ -296,9 +324,16 @@ You probably saw that this particular function takes the following three argumen
 
 Run the following code to specify our `ties` data frame as the edges of our network, our `actors` data frame for the vertices of our network and their attributes, and indicate that this is indeed a directed network.
 
-```{r create_network}
+```{r create_network dlt1}
 dlt1_network <- tbl_graph(edges = dlt1_ties,
                           nodes = dlt1_actors,
+                          node_key = "uid",
+                          directed = TRUE)
+```
+
+```{r create_network dlt2}
+dlt2_network <- tbl_graph(edges = dlt2_ties,
+                          nodes = dlt2_actors,
                           node_key = "uid",
                           directed = TRUE)
 ```
@@ -310,6 +345,10 @@ Take a look at the output for our `dlt1_network` and answer the questions that f
 ```{r inspect_network}
 #YOUR CODE HERE
 dlt1_network
+```
+
+```{r}
+dlt2_network
 ```
 
 1.  How does the number of node and edges in our DLT 1 network compare to the totals reported for the DLT 2, the second iteration of this MOOC-Ed, reported on in our [guiding study](https://github.com/laser-institute/essential-readings/blob/main/sna-labs/sna-lab-2/sna_mooc_irrodl_bjet_articles.pdf)?
@@ -396,10 +435,11 @@ We won't spend a lot of time on polishing our graph here. We'll save that effort
 
 ```{r modify_sociogram}
 
-ggraph(dlt1_network, layout = "fr") +
-  geom_edge_link(alpha = .2) +
-  geom_node_point(aes(color = role1,
-                      size = local_size())) +
+ggraph(dlt1_network, #network object
+       layout = "fr") + #Fruchterman-Reingold (FR) layout 
+  geom_edge_link(alpha = .2) + #change the opacity
+  geom_node_point(aes(color = role1, #change node charateristics. Based on variable role1
+                      size = local_size())) + #degree node
   theme_graph()
   
 
@@ -490,7 +530,7 @@ Centralization can be based on a number of different measures, but degree is one
 The [`centr_degree()`](https://igraph.org/r/html/latest/centr_degree.html) function in {igraph} provides a centralization score based on the metric selected, as well as the degree for each actors in the network. Let's first take a look at the centralization measure based on number of actors individuals have ties with regardless of directionality:
 
 ```{r compute_centrality}
-centr_degree(dlt1_network, mode = "all")
+centr_degree(dlt1_network, mode = "out")
 ```
 
 The first variable `$res` provides node-level centrality scores. So for example, the first MOOC-Ed participant in our network is connected to 53 other actors in the network. The `$centralization` variable provides our actual centrality score, which at 0.64 indicates a rather centralized network as was apparent from our sociogram.
@@ -562,6 +602,8 @@ Reciprocity is an important measure because it reveals the direction through whi
 
 At the network-level, reciprocity is defined as reciprocity is **a measure of the likelihood of vertices in a directed network to be mutually linked**. Using the [`reciprocity()`](https://igraph.org/r/html/latest/reciprocity.html) function, we can directly calculate this measure:
 
+**The likelihood of an edge to be mutual in a directed network.**
+
 ```{r compute_reciprocity}
 
 reciprocity(dlt1_network)
@@ -575,7 +617,8 @@ And if we wanted to highlight this lack of reciprocity in a network visual, we c
 
 dlt1_network <- dlt1_network |>
   activate(edges) |>
-  mutate(reciprocated = edge_is_mutual())
+  mutate(reciprocated = edge_is_mutual()) 
+
 
 dlt1_network
 ```
@@ -584,9 +627,9 @@ Let's now add this new variable to our sociogram to highlight reciprocated ties 
 
 ```{r add_reciprocated_ties}
 ggraph(dlt1_network) +
-  geom_node_point(aes(size = in_degree)) +
-  geom_edge_link(aes(color = reciprocated),
-                 alpha = .2) +
+  geom_node_point(aes(size = in_degree)) + #use in degree for node size
+  geom_edge_link(aes(color = reciprocated), # change edge color based on reciprocity variable
+                 alpha = .2) + #changing the transparency of the edge
   theme_graph()
 ```
 
