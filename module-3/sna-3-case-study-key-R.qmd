@@ -692,7 +692,7 @@ To quickly calculate summary statistics for our nodes, including compositional a
 ```{r skimr}
 ccss_network |> 
   as_tibble() |>
-  skim()
+  skim() #similar to summarize() provides summar stats
 ```
 
 We can see, for example, that egos in our network are connected with on average just 2.8 alters. Notice also that our mean for in-degree and out-degree are identical. This will always be the case since for every tie that goes "in" there is always one going "out."
@@ -702,10 +702,10 @@ Finally, the {skimr} package like our {tidgraph} package plays nicely with other
 ```{r size_role}
 ccss_network |> 
   as_tibble() |>
-  filter(size < 51) |>
-  group_by(weak_component) |>
+  filter(size < 51) |> # those with less than 51 alters
+  group_by(weak_component) |> 
   select(size) |>
-  skim()
+  skim() #similar to summarize() provides summar stats
 ```
 
 As illustrated by the output above, we can see that "otheredprof" (i.e., other educational professionals including our facilitators) were connected with the most individuals on average (18.9), while educators in "Operations" connected with the fewest individuals on average (3).
@@ -844,6 +844,8 @@ ggraph(ccss_network, layout = "fr") +
 The {tidygraph} package has a wide range of [functions to generate alternate representations of graphs](https://tidygraph.data-imaginist.com/reference/morphers.html). They can be used as stand alone functions to permanently alter your network, or as an argument with the `morph()` function to temporarily change your network depending on the analyses you need to perform.
 
 ```{r voronoi-sociogram}
+# need pacakge deldir
+
 ccss_network |>
   ggraph(layout = "fr") + 
   geom_node_point() +
@@ -952,6 +954,27 @@ Use the code chunk below to see if you can identify the "haters" in our network 
 ```{r}
 # YOUR CODE HERE
 
+# 1add row numbers to both data frames to match them up
+ccss_tweets_2 <- ccss_tweets %>% 
+  mutate(row_id = row_number())
+
+vader_ccss_2 <- vader_ccss %>% 
+  mutate(row_id = row_number())
+
+
+# Join the sentiment scores with the original tweets
+ccss_with_sentiment <- ccss_tweets_2 %>%
+  left_join(vader_ccss_2, by = "row_id")
+
+# Identify the "haters" - users with negative sentiment
+haters <- ccss_with_sentiment %>%
+  filter(compound <= -0.05) %>%  # negative sentiment threshold
+  group_by(screen_name) %>%      # assuming screen_name is the username column
+  summarise(
+    negative_tweets = n(),
+    avg_negative_score = mean(compound)
+  ) %>%
+  arrange(avg_negative_score)     # most negative first
 
 ```
 
