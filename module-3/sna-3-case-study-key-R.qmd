@@ -152,11 +152,13 @@ First, load the following packages introduced in previous case studies and that 
 -   skimr
 
 ```{r load-packages}
+#pacman::p_load(ggplot2, tidyverse, readr, igraph, tidygraph, ggraph, janitor, readxl)
+
 #YOUR CODE HERE
 library(tidyverse)
 library(tidygraph)
 library(ggraph)
-library(skimr)
+library(skimr) #package to make summaries
 library(igraph)
 ```
 
@@ -182,6 +184,8 @@ Run the following code to use the `read_csv()` function from the {readr} package
 
 ```{r, import-tweets}
 ccss_tweets <- read_csv("data/ccss-tweets-simple.csv")
+
+ccss_tweets
 ```
 
 ------------------------------------------------------------------------
@@ -273,7 +277,7 @@ Run the following code and take a look at the new data frame to make sure it loo
 
 ```{r unnest-tokens}
 ties_2 <- ties_1 %>%
-  unnest_tokens(input = target,
+  unnest_tokens(input = target, #have in mind that target means reaceiver
                 output = receiver,
                 to_lower = FALSE) %>%
   relocate(sender, receiver)
@@ -290,7 +294,7 @@ In the code chunk below, use the `drop_na()` function to remove the rows with mi
 ```{r remove-NAs}
 #YOUR CODE HERE
 ties <- ties_2 %>%
-  drop_na(receiver)
+  drop_na(receiver) 
 ```
 
 Now use the code chunk below to take a quick look at our final edgelist and answer the questions that follow:
@@ -314,7 +318,9 @@ ties
 Well done!!! Before moving on to the the nodes in our network, run the following code chunk to save our edgelist to a .csv file in our data folder for later use:
 
 ```{r save-edges}
-write_csv(ties, "data/ccss-edgelist.csv")
+# DO NOT RUN AGAIN
+# Update: last saved on July 17th, 2025 in Day 4 of LASER
+# write_csv(ties, "data/ccss-edgelist.csv")
 ```
 
 #### Create Nodelist
@@ -341,7 +347,9 @@ Since we're only interested in usernames for our nodelist, and since we have a n
 actors <- actors_1 %>%
   select(value) %>%
   rename(actors = value) %>% 
-  distinct()
+  distinct() 
+  
+  #distinct() #unique()
 ```
 
 #### 👉 Your Turn ⤵
@@ -440,7 +448,8 @@ This concept of a component is simple and very useful, especially when analyzing
 The {igraph} package has a simple function for identifying the number of components in a network, the size of each component, and which actors belong to each. Let's first take a quick look at the summaries for "weak" components in our network:
 
 ```{r components_weak}
-# components(ccss_network, mode = c("weak"))
+components(ccss_network, mode = c("weak"))
+?components
 ```
 
 While not incredibly intuitive to interpret, the output indicates that there are 13 components as we discovered above, 1 component has 51 members and the smallest components only have 2 members.
@@ -452,7 +461,7 @@ How do you think you might find the "strong" components in our network using the
 ```{r components_strong}
 # YOUR CODE HERE
 
-# components(ccss_network, mode = c("strong"))
+components(ccss_network, mode = c("strong"))
 ```
 
 Wow! If your code was correct, you'll see that we have a whopping 92 distinct components!
@@ -731,8 +740,9 @@ ccss_network <- ccss_network |>
   arrange(desc(betweenness))
   
 
-ccss_network |> 
+x <- ccss_network |> 
   as_tibble()
+x
 ```
 
 1.  Which two actors have the highest betweenness and what is unique about their role in the course?
@@ -976,6 +986,7 @@ haters <- ccss_with_sentiment %>%
   ) %>%
   arrange(avg_negative_score)     # most negative first
 
+haters
 ```
 
 1.  Who were the most negative twitter users in our network?
