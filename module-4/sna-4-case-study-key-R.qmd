@@ -73,10 +73,10 @@ Take a look at the article *The Ebb and Flow of Social Network Ties Between Dist
 
 For this case study, we will be using school leadership data were collected at two school districts over 3 consecutive years that was used to answer the following research questions below:
 
-1.  Is there a relationship between the frequency of collaboration between school leaders and how often they turn to each other to discuss issues of a confidential nature?
+1.  Is there a relationship **between the frequency of collaboration** between school leaders and how often they turn to each other to discuss issues of a **confidential nature**?
 2.  Do school leaders prefer to collaborate with those with whom they have collaborated in the past, or is there some other reason?
-3.  **Does gender or some other individual attribute predicts confidential exchanges between school leaders, or does some previous relation have a stronger effect?**
-4.  Does collaboration between leaders explain one's level of trust in one's administrative colleagues?
+3.  Does **gender** or some other individual attribute predicts confidential exchanges between school leaders, or does some previous relation have a stronger effect?
+4.  Does collaboration between leaders explain one's **level of trust i**n one's administrative colleagues?
 5.  Can we distinguish among different groups of school leaders based on how frequently they collaborate, and if so, are these groupings related to the level at which they work (school versus district)?
 
 Of specific interest for our case study is research question 3 emphasized in bold text above, which asks whether individual attributes predicts tie formation. For example, are males more likely to engage in exchange confidential exchanges with other.
@@ -293,7 +293,7 @@ Edge-lists also have the advantage of being easier to work with when using netwo
 The {igraph} package introduced in Learning Lab 1 has a convenient `get.data.frame()` function for extracting an edge list from a matrix, but first we need to convert our matrix to an igraph network object.
 
 ```{r extract-edges}
-adjacency_matrix <- graph.adjacency(leader_matrix,
+adjacency_matrix <- graph_from_adjacency_matrix(leader_matrix,
                                     diag = FALSE)
 
 class(adjacency_matrix)
@@ -411,7 +411,7 @@ It looks like our summary stats for Year 3 confidential exchanges network and at
 
 ![](img/table-9-1.jpg){width="80%"}
 
-The average in/out-degree for our school leaders data is 3.26, however, which is a little lower than that reported by Carolyn. Again, this is likely a function of our removal of self-loops. To test this theory, we could simply change the `diag = FALSE` argument added to the `graph.adjacency()` function above to `TRUE` to include self-loops and then try rerunning all the code above.
+The average in/out-degree for our school leaders data is 3.26, however, which is a little lower than that reported by Carolan. Again, this is likely a function of our removal of self-loops. To test this theory, we could simply change the `diag = FALSE` argument added to the `graph.adjacency()` function above to `TRUE` to include self-loops and then try rerunning all the code above.
 
 #### School/District-Level Stats
 
@@ -476,6 +476,15 @@ ggraph(layout = "fr") +
   geom_node_point() +
   geom_edge_link() + 
   theme_graph()
+```
+
+```{r}
+leader_measures |>
+  ggraph(layout = "fr") + 
+  geom_node_point(aes(color = trust)) +
+  geom_edge_link(arrow = arrow(length = unit(1, 'mm')), 
+                 end_cap = circle(1.5, 'mm'),
+                 alpha = .2) 
 ```
 
 After you are satisfied with your sociogram, answer the following questions?
