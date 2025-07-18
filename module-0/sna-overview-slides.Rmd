@@ -382,7 +382,7 @@ Basic Concepts, Measurement, Groups, and Model
 .font70[
 - [SNA Case Study: Components, Cliques, & Key Actors](https://github.com/ElaCReyes/network-analysis-2025-Summer/blob/main/module-3/sna-3-case-study-R.qmd) You may use Posit or Download the file and work in RStudio 
 
-- [SNA Case Study - KEY](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-3-case-study-key-R) Open in Case of Emergency :D
+- [SNA Case Study - KEY](https://elacreyes.github.io/network-analysis-2025-Summer/module-3/sna-3-case-study-key-R.html) Open in Case of Emergency :D
 
 
 - [Guiding Study: Hashtag Common Core](https://www.hashtagcommoncore.com)
@@ -417,9 +417,9 @@ Basic Concepts, Measurement, Groups, and Model
 ### Case Study
 
 .font70[
-- [SNA Case Study: Birds of a Feather Lead Together](https://github.com/ElaCReyes/network-analysis-2025-Summer/blob/main/module-4/sna-4-case-study-R.qmd)
+- [SNA Case Study: Birds of a Feather Lead Together](https://github.com/ElaCReyes/network-analysis-2025-Summer/blob/main/module-4/sna-4-case-study-R.qmd) ou may use Posit or Download the file and work in RStudio 
 
-- [SNA Case Study - KEY](https://elacreyes.github.io/network-analysis-2025-Summer/module-4/sna-lab-4-case-study-key.html)
+- [SNA Case Study - KEY](https://elacreyes.github.io/network-analysis-2025-Summer/module-4/sna-3-case-study-key-R.html)
 
 - [Guiding Study: The ebb and flow of social network ties between district leaders.](https://drive.google.com/open?id=1cmfX3HwEbPC0_1vDp2nBsFlJpcErTqMm&usp=drive_fs)
 
