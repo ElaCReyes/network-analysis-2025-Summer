@@ -109,7 +109,7 @@ Two modeling techniques unique to network analysis and demonstrated in Chapter 9
 
 #### Key Findings
 
-In response to research questions 1 & 2 from above, Carolyn reported that "while collaboration in year 1 does not significantly predict collaboration in year 3, confidential exchanges in year 1 does" and suggested that "collaboration among school leaders provides an important foundation for more sensitive, perhaps even deeper, relations (e.g., confidential exchanges) at a later point in time."
+In response to research questions 1 & 2 from above, Carolan reported that "while collaboration in year 1 does not significantly predict collaboration in year 3, confidential exchanges in year 1 does" and suggested that "collaboration among school leaders provides an important foundation for more sensitive, perhaps even deeper, relations (e.g., confidential exchanges) at a later point in time."
 
 #### 👉 Your Turn ⤵
 
@@ -159,14 +159,16 @@ Let's load the {statnet} package that we'll be using in the Model section of our
 
 ```{r load-libraries}
 # YOUR CODE HERE
+#pacman::p_load(ggplot2, tidyverse, readr, igraph, tidygraph, ggraph, janitor, readxl, statnet)
+
 library(readxl)
 library(tidyverse)
-library(igraph)
+library(igraph) 
 library(tidygraph)
 library(ggraph)
 library(skimr)
 library(janitor)
-library(statnet)
+library(statnet) #NEW
 ```
 
 ## 2. WRANGLE
@@ -268,6 +270,8 @@ To dichotomize our our matrix, the following code will "assign" 0's to all value
 leader_matrix[leader_matrix <= 2] <- 0
 
 leader_matrix[leader_matrix >= 3] <- 1
+
+leader_matrix
 ```
 
 #### Add Row and Column Names
@@ -455,7 +459,7 @@ node_measures |>
             )
 ```
 
-How close your result to those reported by Carolyn Table 9.1?
+How close your result to those reported by Carolan Table 9.1?
 
 -   YOUR RESPONSE HERE
 
@@ -481,7 +485,9 @@ ggraph(layout = "fr") +
 ```{r}
 leader_measures |>
   ggraph(layout = "fr") + 
-  geom_node_point(aes(color = trust)) +
+  geom_node_point(aes(color = trust, 
+                      shape = as.factor(district_site), 
+                      size = in_degree)) +
   geom_edge_link(arrow = arrow(length = unit(1, 'mm')), 
                  end_cap = circle(1.5, 'mm'),
                  alpha = .2) 
